@@ -1240,7 +1240,7 @@
     var end = TinyDatePicker(root.querySelector('.dr-cal-end'), cp({}, opts.endOpts, {
       mode: 'dp-permanent',
       dateClass: dateClass,
-      hilightedDate: shiftMonth(start.state.hilightedDate, -1),
+      hilightedDate: shiftMonth(start.state.hilightedDate, 1),
     }));
     var handlers = {
       'statechange': onStateChange,
