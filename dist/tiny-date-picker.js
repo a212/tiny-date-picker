@@ -237,7 +237,7 @@
 
       // The date to hilight initially if the date picker has no
       // initial value.
-      hilightedDate: now(),
+      hilightedDate: shiftMonth(now(), -1),
 
       format: function (dt) {
         return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + dt.getFullYear();

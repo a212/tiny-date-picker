@@ -41,12 +41,12 @@ export function DateRangePicker(container, opts) {
   };
   var start = TDP(root.querySelector('.dr-cal-start'), cp({}, opts.startOpts, {
     mode: 'dp-permanent',
-    hilightedDate: shiftMonth(start.state.hilightedDate, -1),
     dateClass: dateClass,
   }));
   var end = TDP(root.querySelector('.dr-cal-end'), cp({}, opts.endOpts, {
     mode: 'dp-permanent',
     dateClass: dateClass,
+    hilightedDate: shiftMonth(start.state.hilightedDate, -1),
   }));
   var handlers = {
     'statechange': onStateChange,

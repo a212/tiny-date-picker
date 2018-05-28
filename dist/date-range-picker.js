@@ -237,7 +237,7 @@
 
       // The date to hilight initially if the date picker has no
       // initial value.
-      hilightedDate: now(),
+      hilightedDate: shiftMonth(now(), -1),
 
       format: function (dt) {
         return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + dt.getFullYear();
@@ -1235,12 +1235,12 @@
     };
     var start = TinyDatePicker(root.querySelector('.dr-cal-start'), cp({}, opts.startOpts, {
       mode: 'dp-permanent',
-      hilightedDate: shiftMonth(start.state.hilightedDate, -1),
       dateClass: dateClass,
     }));
     var end = TinyDatePicker(root.querySelector('.dr-cal-end'), cp({}, opts.endOpts, {
       mode: 'dp-permanent',
       dateClass: dateClass,
+      hilightedDate: shiftMonth(start.state.hilightedDate, -1),
     }));
     var handlers = {
       'statechange': onStateChange,

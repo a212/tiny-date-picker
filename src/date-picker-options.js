@@ -2,7 +2,7 @@
  * @file Responsible for sanitizing and creating date picker options.
  */
 
-import {now, shiftYear, dateOrParse} from './lib/date-manip';
+import {now, shiftMonth, shiftYear, dateOrParse} from './lib/date-manip';
 import {cp} from './lib/fns';
 
 var english = {
@@ -56,7 +56,7 @@ function defaults() {
 
     // The date to hilight initially if the date picker has no
     // initial value.
-    hilightedDate: now(),
+    hilightedDate: shiftMonth(now(), -1),
 
     format: function (dt) {
       return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + dt.getFullYear();
